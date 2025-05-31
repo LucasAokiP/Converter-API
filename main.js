@@ -14,7 +14,12 @@ async function getExchangeRate(daMoeda,paraMoeda) {
             throw new Error("Erro ao busca as taxas de cambio");
         }
     }
-    catch{
-
+    catch(error){
+        console.error("Erro:",error);
+        return null;
     }
 }
+
+document.getElementById("current-form").addEventListener("submit", async function(event){
+    
+})
