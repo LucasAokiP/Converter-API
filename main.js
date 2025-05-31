@@ -20,6 +20,12 @@ async function getExchangeRate(daMoeda,paraMoeda) {
     }
 }
 
-document.getElementById("current-form").addEventListener("submit", async function(event){
-    
+document.getElementById("currency-form").addEventListener("submit", async function(event){
+    event.preventDefault();
+
+    const valor = document.getElementById("amount").value;
+    const daMoeda = document.getElementById("daMoeda").value;
+    const paraMoeda = document.getElementById("paraMoeda").value;
+
+
 })
