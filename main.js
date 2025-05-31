@@ -27,5 +27,17 @@ document.getElementById("currency-form").addEventListener("submit", async functi
     const daMoeda = document.getElementById("daMoeda").value;
     const paraMoeda = document.getElementById("paraMoeda").value;
 
+    //buscat taxa de cambio da API
 
+    const exchangeRate = await getExchangeRate(daMoeda,paraMoeda);
+
+    if(exchangeRate){
+        const valorConvertido = valor * exchangeRate;
+
+        const conversao = document.getElementById("conversao");
+        conversao.textContent = `Resultado:${valorConvertido.toFixed(2)}${paraMoeda}`;
+    }
+    else{
+        alert("Erro ao buscar cotaçao. Tente novamente");
+    }
 })
